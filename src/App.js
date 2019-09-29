@@ -7,33 +7,105 @@ class App extends Component {
 
 state={
   results:'',
-  temp:''
+  previousnumber:'',
+  currentnumber:'',
+  operator:''
+}
+
+isOperator = (button) =>{
+   if(button === '+'){
+    return false;
+   } 
+   else if(button === '-'){
+     return false;
+   }
+   else if(button === '*'){
+    return false;
+  }
+  else if(button === '/'){
+    return false;
+  }
+  else if(button === 'CE'){
+    return false;
+  }
+   else if(button === '='){
+     return false
+   }
+   else return true;
 }
 
 onClick = (button) =>{
-if(button === "9"){
-  var newresult = this.state.results.concat('9');
-this.setState({ results:newresult })
+if(this.isOperator(button) ){
+this.setState({ results: this.state.results + button })
 }
-else if(button === "8"){
-  var newresult = this.state.results.concat('8');
-  console.log(newresult);
-this.setState({ results:newresult })
+
+else if(button === "+" && this.state.results!==''){
+  var prevno = this.state.results;
+  var resultcpy = {...this.state};
+  resultcpy.previousnumber = this.state.results;
+  resultcpy.operator = 'plus';
+  this.setState({ results:'',previousnumber:resultcpy.previousnumber,operator:resultcpy.operator });
+  
+  console.log(this.state.previousnumber);
+  console.log(this.state.operator);
+  
 }
-else if(button === "+"){
-  var temp = this.state.results;
-  var temp2 = this.state.temp;
-  temp = parseInt(temp) + parseInt(temp2);
-  // this.state.temp = parseInt(this.state.results) + parseInt(this.state.temp);
-  console.log(parseInt(temp));
-this.setState({ results:'' })
+else if(button === "-" && this.state.results!==''){
+   prevno = this.state.results;
+  this.setState({previousnumber:prevno})
+  this.setState({ results:'',operator:'sub' })
+  console.log("sub")
+}
+
+else if(button === "*" && this.state.results!==''){
+   prevno = this.state.results;
+  this.setState({previousnumber:prevno})
+  this.setState({ results:'',operator:'mul' })
+  console.log("mul")
+}
+
+else if(button === "/" && this.state.results!==''){
+   prevno = this.state.results;
+  this.setState({previousnumber:prevno})
+  this.setState({ results:'',operator:'div' })
+  console.log("div")
+}
+
+else if(button === "CE" && this.state.results!==''){
+ this.setState({previousnumber:''})
+ this.setState({ results:'',operator:'' })
+ console.log("cleared")
 }
 else if(button === "="){
-  var newresult = this.state.temp;
-  console.log(newresult);
-var results = this.state.results;
-console.log(results);
-this.setState({ results:newresult }) 
+// this.state.currentnumber = this.state.results;
+
+  if(this.state.operator === 'plus'){
+    this.setState({
+      results:parseInt(this.state.previousnumber) + parseInt(this.state.results)
+    });
+    this.setState({operator:''})
+  }
+    else if(this.state.operator === 'sub'){
+      this.setState({
+        results:parseInt(this.state.previousnumber) - parseInt(this.state.results)
+      });
+      this.setState({operator:''})
+    }
+
+      else if(this.state.operator === 'mul'){
+        this.setState({
+          results:parseInt(this.state.previousnumber) * parseInt(this.state.results)
+        });
+        this.setState({operator:''})
+      }
+
+        else if(this.state.operator === 'div'){
+          this.setState({
+            results:parseInt(this.state.previousnumber) / parseInt(this.state.results)
+          });
+          this.setState({operator:''})
+
+    }
 }
 }
 

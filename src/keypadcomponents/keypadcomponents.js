@@ -1,26 +1,30 @@
 import React from 'react';
+import Button from './button';
 
 const keypadcomponents = (props) =>{
 
 return(
     <div>
-        <button name="9" onClick={e=>props.onClick(e.target.name)}>9</button>
-        <button name="8" onClick={e=>props.onClick(e.target.name)}>8</button>
-        <button name="7" onClick={e=>props.onClick(e.target.name)}>7</button>
-        <button name="6" onClick={e=>props.onClick(e.target.name)}>6</button>
+        <Button onClick={props.onClick}>9</Button>
+        <Button onClick={props.onClick}>8</Button>
+        <Button onClick={props.onClick}>7</Button>
+        <Button onClick={props.onClick}>6</Button>        
         <br></br>
-        <button name="5" onClick={e=>props.onClick(e.target.name)}>5</button>
-        <button name="4" onClick={e=>props.onClick(e.target.name)}>4</button>
-        <button name="3" onClick={e=>props.onClick(e.target.name)}>3</button>
-        <button name="2" onClick={e=>props.onClick(e.target.name)}>2</button>
+        <Button onClick={props.onClick}>5</Button>
+        <Button onClick={props.onClick}>4</Button>
+        <Button onClick={props.onClick}>3</Button>
+        <Button onClick={props.onClick}>2</Button>
         <br></br>
-        <button name="1" onClick={e=>props.onClick(e.target.name)}>1</button>
-        <button name="0" onClick={e=>props.onClick(e.target.name)}>0</button>
-        <button name="+" onClick={e=>props.onClick(e.target.name)}>+</button>
-        <button name="-" onClick={e=>props.onClick(e.target.name)}>-</button>
-        <button name="*" onClick={e=>props.onClick(e.target.name)}>*</button>
-        <button name="/" onClick={e=>props.onClick(e.target.name)}>/</button>
-        <button name="=" onClick={e=>props.onClick(e.target.name)}>=</button>
+        <Button onClick={props.onClick}>1</Button>
+        <Button onClick={props.onClick}>0</Button>
+        <Button onClick={props.onClick}>+</Button>
+        <Button onClick={props.onClick}>-</Button>
+        <Button onClick={props.onClick}>*</Button>
+        <br></br>
+        <Button onClick={props.onClick}>/</Button>
+        <Button onClick={props.onClick}>=</Button>
+        <Button onClick={props.onClick}>CE</Button>
+
 
     </div>
 )
