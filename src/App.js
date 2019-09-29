@@ -115,8 +115,11 @@ else if(button === "="){
     return (
       <div className="App">
         <h1>Multi Calci</h1>
+        <div className="Calci">
+        
         <Resultcomponent results={this.state.results}></Resultcomponent>
         <Keypadcomponent onClick={this.onClick} operator={this.isOperator}></Keypadcomponent>
+        </div>  
       </div>
     );
   }

@@ -1,14 +1,17 @@
 .Button{
-    width: 12%;
-    height:50px;
+    
     background-color: darkslategrey;
     color: beige;
+    width: 12%;
+    height: 50px;
 
 }
 
 .Controls{
-    width: 12%;
-    height:50px;
+    
     background-color:orange;
     color: beige;
+    width: 12%;
+    height: 50px;
+
 }
