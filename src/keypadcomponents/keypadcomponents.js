@@ -17,13 +17,13 @@ return(
         <br></br>
         <Button onClick={props.onClick}>1</Button>
         <Button onClick={props.onClick}>0</Button>
-        <Button onClick={props.onClick}>+</Button>
-        <Button onClick={props.onClick}>-</Button>
-        <Button onClick={props.onClick}>*</Button>
+        <Button onClick={props.onClick} operator={props.operator}>+</Button>
+        <Button onClick={props.onClick} operator={props.operator}>-</Button>
+        <Button onClick={props.onClick} operator={props.operator}>*</Button>
         <br></br>
-        <Button onClick={props.onClick}>/</Button>
-        <Button onClick={props.onClick}>=</Button>
-        <Button onClick={props.onClick}>CE</Button>
+        <Button onClick={props.onClick} operator={props.operator}>/</Button>
+        <Button onClick={props.onClick} operator={props.operator}>=</Button>
+        <Button onClick={props.onClick} operator={props.operator}>CE</Button>
 
 
     </div>

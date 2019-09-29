@@ -1,0 +1,14 @@
+.Button{
+    width: 12%;
+    height:50px;
+    background-color: darkslategrey;
+    color: beige;
+
+}
+
+.Controls{
+    width: 12%;
+    height:50px;
+    background-color:orange;
+    color: beige;
+}

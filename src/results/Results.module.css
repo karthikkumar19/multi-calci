@@ -1,0 +1,10 @@
+.Results{
+    background-color: black;
+    height: 60px;
+    width: 50%;
+    margin:auto;
+    text-align: end;
+    color: aliceblue;
+    /* overflow-x: scroll; */
+    font-size: 30px;
+}
