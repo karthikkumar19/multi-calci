@@ -3,7 +3,7 @@ import Button from './button';
 import classes from './Keypad.module.css';
 
 const keypadcomponents = (props) =>{
-
+  
 return(
     <div className={classes.Flex}>
     <div className={classes.Keypad}>
@@ -24,10 +24,10 @@ return(
         <Button onClick={props.onClick}>1</Button>
         <Button onClick={props.onClick} operator={props.operator}>*</Button>
         </div>
-        <div className={classes.Keypad}>
-        <Button onClick={props.onClick}>0</Button>
-        <Button onClick={props.onClick} operator={props.operator}>=</Button>
-        <Button onClick={props.onClick} operator={props.operator}>CE</Button>
+        <div  className={classes.Keypad}>
+        <Button onClick={props.onClick} >0</Button>
+        <Button onClick={props.onClick}  operator={props.operator}>=</Button>
+        <Button onClick={props.onClick}   operator={props.operator}>CE</Button>
         <Button onClick={props.onClick} operator={props.operator}>/</Button>
         </div> 
         </div>
